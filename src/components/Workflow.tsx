@@ -236,7 +236,7 @@ export default function Workflow() {
                     transition={{
                       duration: 0.4,
                       delay: 1.0 + (i * 0.1),
-                                          }}
+                    }}
                   />
                 ))}
               </div>
