@@ -215,7 +215,7 @@ export default function Testimonials() {
                   initial={{ width: "0%" }}
                   animate={{ width: "0%" }}
                   whileHover={{ width: "100%" }}
-                  transition={{ duration: 5, ease: "linear" }}
+                  transition={{ duration: 5 }}
                   key={currentTestimonial}
                 />
               </div>
