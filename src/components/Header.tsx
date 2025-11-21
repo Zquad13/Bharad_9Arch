@@ -146,39 +146,39 @@ export default function Header() {
         </div>
       </motion.header>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - Centered Dropdown */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: -300 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -300 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-y-0 left-0 z-50 w-64 bg-background shadow-xl md:hidden"
+            className="fixed top-32 left-1/2 transform -translate-x-1/2 z-50 w-80 max-w-[90vw] bg-background shadow-xl md:hidden rounded-lg border border-border"
           >
             <div className="p-6">
-              <div className="flex items-center justify-between mb-8">
-                <span className="text-xl font-heading font-bold text-accent">
-                  9ARCHITECTS
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-lg font-heading font-bold text-accent uppercase tracking-[0.1em]">
+                  9Architects
                 </span>
                 <motion.button
                   whileTap={{ scale: 0.9 }}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 rounded-md text-foreground hover:text-accent hover:bg-accent/10 transition-colors"
                 >
-                  <X className="h-6 w-6" />
+                  <X className="h-5 w-5" />
                 </motion.button>
               </div>
 
-              <nav className="space-y-4">
+              <nav className="space-y-3">
                 {navItems.map((item, index) => (
                   <motion.button
                     key={item.id}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 }}
                     onClick={() => scrollToSection(item.id)}
-                    className={`block w-full text-left px-4 py-3 rounded-lg transition-colors ${
+                    className={`block w-full text-center px-4 py-3 rounded-lg transition-colors text-sm font-medium uppercase tracking-[0.15em] ${
                       activeSection === item.id
                         ? 'text-accent bg-accent/10'
                         : 'text-foreground hover:text-accent hover:bg-accent/5'
