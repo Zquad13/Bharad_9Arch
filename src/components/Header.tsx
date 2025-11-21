@@ -67,29 +67,45 @@ export default function Header() {
             : 'bg-background/95 backdrop-blur-sm'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="flex flex-col items-center space-y-6">
+            {/* Row 1: Minimal 9A Logo */}
             <motion.div
-              className="flex-shrink-0"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
               <button
                 onClick={() => scrollToSection('home')}
-                className="text-2xl font-heading font-bold text-foreground hover:text-accent transition-colors"
+                className="text-4xl font-heading font-bold text-foreground hover:text-accent transition-colors tracking-tighter"
               >
-                9ARCHITECTS
+                9A
               </button>
             </motion.div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              {navItems.map((item) => (
+            {/* Row 2: Studio Name */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+            >
+              <button
+                onClick={() => scrollToSection('home')}
+                className="text-2xl font-heading font-bold text-foreground hover:text-accent transition-colors tracking-[0.1em] uppercase"
+              >
+                9Architects
+              </button>
+            </motion.div>
+
+            {/* Row 3: Navigation Menu */}
+            <nav className="hidden md:flex items-center space-x-8">
+              {navItems.map((item, index) => (
                 <motion.button
                   key={item.id}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 + (index * 0.05) }}
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative font-medium transition-colors ${
+                  className={`relative text-xs font-medium uppercase tracking-[0.15em] transition-colors ${
                     activeSection === item.id
                       ? 'text-accent'
                       : 'text-foreground hover:text-accent'
@@ -101,7 +117,7 @@ export default function Header() {
                   {activeSection === item.id && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent"
+                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-accent"
                       initial={false}
                       transition={{
                         type: "spring",
@@ -114,7 +130,7 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Centered */}
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
