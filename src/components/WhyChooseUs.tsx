@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ,
       },
     },
   }
@@ -88,7 +88,7 @@ export default function WhyChooseUs() {
                 variants={itemVariants}
                 className="group text-center space-y-6"
                 whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{ duration: 0.3,  }}
               >
                 {/* Icon */}
                 <motion.div
@@ -117,7 +117,7 @@ export default function WhyChooseUs() {
                   className="w-12 h-0.5 mx-auto bg-accent rounded-full origin-center"
                   initial={{ scaleX: 0 }}
                   whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  transition={{ duration: 0.3,  }}
                 />
               </motion.div>
             ))}
