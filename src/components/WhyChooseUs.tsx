@@ -54,7 +54,6 @@ export default function WhyChooseUs() {
       y: 0,
       transition: {
         duration: 0.8,
-        ,
       },
     },
   }
