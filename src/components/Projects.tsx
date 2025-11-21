@@ -124,7 +124,7 @@ export default function Projects() {
                   <motion.div
                     className="relative overflow-hidden rounded-lg"
                     whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
                     onMouseEnter={() => setHoveredProject(project.id)}
                     onMouseLeave={() => setHoveredProject(null)}
                   >
