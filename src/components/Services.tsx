@@ -48,7 +48,7 @@ export default function Services() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
   }
