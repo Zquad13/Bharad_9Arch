@@ -103,7 +103,7 @@ export default function Header() {
                   key={item.id}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 + (index * 0.05) }}
+                  transition={{ delay: 0.2 + (index * 0.05), duration: 0.2 }}
                   onClick={() => scrollToSection(item.id)}
                   className={`relative text-xs font-medium uppercase tracking-[0.15em] transition-colors ${
                     activeSection === item.id
@@ -111,7 +111,6 @@ export default function Header() {
                       : 'text-foreground hover:text-accent'
                   }`}
                   whileHover={{ y: -2 }}
-                  transition={{ duration: 0.2 }}
                 >
                   {item.label}
                   {activeSection === item.id && (
