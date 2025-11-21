@@ -193,7 +193,7 @@ export default function Workflow() {
                           transition={{
                             duration: 0.6,
                             delay: 0.8 + (index * 0.1),
-                                                      }}
+                          }}
                         >
                           <span className="text-foreground font-bold text-xs">
                             {step.number}
